@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="image-container">
+            <img src="./assets/login.jpg" alt="Imagem de Login">
+        </div>
+
+        <div class="form-container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="error-message" style="color: red; display: none;">E-mail ou senha inválidos!</p>
+            
+            <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se aqui</a></p>
+        </div>
+    </div>
+
+    <!-- Cadastro de Usuário -->
+    <div class="register-container" style="display: none;">
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <label for="fullName">Nome Completo:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="phone">Celular:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="newEmail">E-mail:</label>
+            <input type="email" id="newEmail" name="newEmail" required>
+
+            <label for="dob">Data de Nascimento:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="newPassword">Senha:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="#" id="show-login">Faça login aqui</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

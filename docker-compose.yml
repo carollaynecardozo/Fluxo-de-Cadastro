@@ -1,0 +1,31 @@
+services:
+  mysql:
+    image: mysql:8.0  # Usando a versão 8 do MySQL
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345  # Senha do usuário root
+      MYSQL_DATABASE: usuariosDB       # Banco de dados inicial
+      MYSQL_USER: user                 # Usuário do banco
+      MYSQL_PASSWORD: 12345      # Senha do usuário
+    volumes:
+      - mysql-data:/var/lib/mysql  # Volume para persistir dados do banco
+    ports:
+      - "3306:3306"  # Porta para acessar o MySQL localmente
+    networks:
+      - mysql-network
+    restart: always
+
+  adminer:
+    image: adminer  # Imagem oficial do Adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"  # Porta para acessar o Adminer localmente
+    networks:
+      - mysql-network
+    restart: always
+
+volumes:
+  mysql-data:  # Volume persistente para o MySQL
+
+networks:
+  mysql-network:  # Rede para permitir que os containers se comuniquem
